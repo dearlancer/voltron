@@ -240,7 +240,7 @@ if HAVE_VDB:
             length = 0
             t = self._vdb.getTrace()
             arch = self._vdb.arch.getArchId()
-            for i in xrange(count):
+            for i in range(count):
                 op = t.parseOpcode(address + length, arch=arch)
                 length += op.size
             return length
@@ -271,7 +271,7 @@ if HAVE_VDB:
              `NotAStringError` if it doesnt look like an ASCII string.
             """
             cs = []
-            for i in xrange(max_length):
+            for i in range(max_length):
                 try:
                     c = self.memory(address + i, 1)[0]
                 except FailedToReadMemoryError:
@@ -298,7 +298,7 @@ if HAVE_VDB:
             *simple* Unicode is ASCII with interspersed NULLs
             """
             cs = []
-            for i in xrange(max_length):
+            for i in range(max_length):
                 try:
                     b = self.memory(address + (i * 2), 2)
                 except FailedToReadMemoryError:

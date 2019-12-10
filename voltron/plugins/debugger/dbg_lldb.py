@@ -194,7 +194,7 @@ if HAVE_LLDB:
 
             # extract the actual register values
             objs = []
-            for i in xrange(len(regs)):
+            for i in range(len(regs)):
                 objs += regs[i]
             regs = {}
             for reg in objs:
@@ -207,7 +207,7 @@ if HAVE_LLDB:
                 elif reg.num_children > 0:
                     try:
                         children = []
-                        for i in xrange(reg.GetNumChildren()):
+                        for i in range(reg.GetNumChildren()):
                             children.append(int(reg.GetChildAtIndex(i, lldb.eNoDynamicValues, True).value, 16))
                         if t_info['byte_order'] == 'big':
                             children = list(reversed(children))
